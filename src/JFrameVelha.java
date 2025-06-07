@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class JFrameVelha extends javax.swing.JFrame {
 
     private boolean vez = true;//true == X
+    private int jogadas = 0;
     
     public JFrameVelha() {
         initComponents();
@@ -62,6 +63,8 @@ public class JFrameVelha extends javax.swing.JFrame {
 
      private void meuMetodo(ActionEvent evt)
     {
+        jogadas++;
+        
         JButton btn = (JButton)(evt.getSource());
         
         btn.setText(lblVez.getText());
@@ -72,7 +75,17 @@ public class JFrameVelha extends javax.swing.JFrame {
         if(vencedor)
         {
             JOptionPane.showMessageDialog(null, "Parabéns, o vencedor é " + lblVez.getText());
+            btnRecomecarActionPerformed(null);
             return;
+        }
+        else
+        {
+            if(jogadas == 9)
+            {
+                JOptionPane.showMessageDialog(null, "Deu Velha!!");
+                btnRecomecarActionPerformed(null);
+                return;
+            }
         }
         
         vez = !vez;
@@ -248,7 +261,27 @@ public class JFrameVelha extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecomecarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecomecarActionPerformed
-        // TODO add your handling code here:
+        jogadas = 0;
+        vez = true;
+        lblVez.setText("X");
+        jButton1.setText("");
+        jButton2.setText("");
+        jButton3.setText("");
+        jButton4.setText("");
+        jButton5.setText("");
+        jButton6.setText("");
+        jButton7.setText("");
+        jButton8.setText("");
+        jButton9.setText("");
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(true);
+        jButton3.setEnabled(true);
+        jButton4.setEnabled(true);
+        jButton5.setEnabled(true);
+        jButton6.setEnabled(true);
+        jButton7.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButton9.setEnabled(true);
     }//GEN-LAST:event_btnRecomecarActionPerformed
     
     
