@@ -69,6 +69,12 @@ public class JFrameVelha extends javax.swing.JFrame {
         
         boolean  vencedor = verificaVencedor();
         
+        if(vencedor)
+        {
+            JOptionPane.showMessageDialog(null, "Parabéns, o vencedor é " + lblVez.getText());
+            return;
+        }
+        
         vez = !vez;
         
         if(vez)
@@ -79,54 +85,52 @@ public class JFrameVelha extends javax.swing.JFrame {
         {
             lblVez.setText("O");
         }
-        
-        //JOptionPane.showMessageDialog(null, "Hello World! " + btn.getText());
     }
     
     private boolean verificaVencedor() {
-        if(jButton1.getText().equals(jButton2.getText()) 
+        if(!"".equals(jButton1.getText()) && jButton1.getText().equals(jButton2.getText()) 
                 && jButton1.getText().equals(jButton3.getText()))//primeira linha
         {
             return true;
         }
         
-        if(jButton4.getText().equals(jButton5.getText()) 
+        if(!"".equals(jButton4.getText()) &&jButton4.getText().equals(jButton5.getText()) 
                 && jButton4.getText().equals(jButton6.getText()))//segunda linha
         {
             return true;
         }
         
-        if(jButton7.getText().equals(jButton8.getText()) 
+        if(!"".equals(jButton7.getText()) &&jButton7.getText().equals(jButton8.getText()) 
                 && jButton7.getText().equals(jButton9.getText()))//terceira linha
         {
             return true;
         }
         
-        if(jButton3.getText().equals(jButton6.getText()) 
+        if(!"".equals(jButton3.getText()) &&jButton3.getText().equals(jButton6.getText()) 
                 && jButton3.getText().equals(jButton9.getText()))//primeira coluna
         {
             return true;
         }
         
-        if(jButton4.getText().equals(jButton1.getText()) 
+        if(!"".equals(jButton4.getText()) &&jButton4.getText().equals(jButton1.getText()) 
                 && jButton1.getText().equals(jButton7.getText()))//segunda coluna
         {
             return true;
         }
         
-        if(jButton2.getText().equals(jButton5.getText()) 
+        if(!"".equals(jButton2.getText()) &&jButton2.getText().equals(jButton5.getText()) 
                 && jButton5.getText().equals(jButton8.getText()))//terceira coluna
         {
             return true;
         }
         
-        if(jButton3.getText().equals(jButton4.getText()) 
+        if(!"".equals(jButton3.getText()) &&jButton3.getText().equals(jButton4.getText()) 
                 && jButton3.getText().equals(jButton8.getText()))//diagonal principal
         {
             return true;
         }
         
-        if(jButton2.getText().equals(jButton4.getText()) 
+        if(!"".equals(jButton2.getText()) &&jButton2.getText().equals(jButton4.getText()) 
                 && jButton2.getText().equals(jButton9.getText()))//diagonal secundária
         {
             return true;
